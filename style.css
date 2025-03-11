@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Floating Hearts Background */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('hearts.png') repeat;
+    opacity: 0.1;
+    animation: floatHearts 10s linear infinite;
+}
+
+/* Floating Animation */
+@keyframes floatHearts {
+    from { background-position: 0 0; }
+    to { background-position: 0 -100px; }
+}
+
+/* Login Page */
+#login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.login-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #ff758c;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #ff758c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff5f6d;
+}
+
+/* Main Content */
+#content {
+    padding: 40px 10px;
+}
+
+/* Title */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Vertical Line */
+.line {
+    position: absolute;
+    width: 4px;
+    background: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Memory Cards */
+.memory {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: block; /* Ensure elements are visible */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+/* Left Side Memories */
+.memory.left {
+    align-self: flex-start;
+}
+
+/* Right Side Memories */
+.memory.right {
+    align-self: flex-end;
+}
+
+/* Memory Images */
+.memory img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Soft Glow Effect on Hover */
+.memory img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(255, 117, 140, 0.5);
+}
+
+/* Floating Animation for Images */
+.memory {
+    animation: floatUpDown 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatUpDown {
+    from { transform: translateY(-5px); }
+    to { transform: translateY(5px); }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
